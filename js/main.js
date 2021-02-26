@@ -1,3 +1,5 @@
+/*
+
 //----Welcome message
 
 alert("Bienvenue!");
@@ -11,6 +13,7 @@ console.log("Bienvenue " + person);
 
 alert("Bonjour "+ person + ", prêt pour une partie?");
 
+*/
 
 //----Choices
 
@@ -41,4 +44,14 @@ console.log(i);
 var computerChoice = choices[i];
 console.log("L'ordinateur a choisi " + computerChoice);
 
- 
+//------Compare Choices for winner or looser
+
+if(playerChoice === computerChoice)
+    console.log("Match Nul")
+
+    else if ((playerChoice === "ciseaux" && computerChoice === "feuille") || (playerChoice === "pierre" && computerChoice === "feuille")
+        || (playerChoice === "feuille" && computerChoice === "pierre"))
+        console.log("gagné")
+
+        else
+            console.log("perdu")
