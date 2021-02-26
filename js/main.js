@@ -1,4 +1,4 @@
-/*
+
 
 //----Welcome message
 
@@ -11,9 +11,8 @@ console.log("Bienvenue " + person);
 
 //----"Ready to play" message
 
-alert("Bonjour "+ person + ", prêt pour une partie?");
+alert("Bonjour "+ person + ", prêt pour une partie contre moi?");
 
-*/
 
 //----Choices
 
@@ -44,14 +43,36 @@ console.log(i);
 var computerChoice = choices[i];
 console.log("L'ordinateur a choisi " + computerChoice);
 
+
+
+
+ //Variables for results
+var result 
+var draw = "Match Nul !"
+var win = "Gagné !"
+var loose = "Perdu!" 
 //------Compare Choices for winner or looser
 
-if(playerChoice === computerChoice)
-    console.log("Match Nul")
+//Match nul  
+if(playerChoice === computerChoice){
+  
+result= draw;
+console.log(result)
 
-    else if ((playerChoice === "ciseaux" && computerChoice === "feuille") || (playerChoice === "pierre" && computerChoice === "feuille")
-        || (playerChoice === "feuille" && computerChoice === "pierre"))
-        console.log("gagné")
+//Gagné
+        }else if ((playerChoice === "ciseaux" && computerChoice === "feuille") || (playerChoice === "pierre" && computerChoice === "feuille")
+        || (playerChoice === "feuille" && computerChoice === "pierre")){
+            result= win
+        console.log(result)
 
-        else
-            console.log("perdu")
+//Perdu
+        }else{
+            result=loose
+            console.log(result)
+
+        }
+    
+        alert( ("Résultats :") + "\n" + ("Vous : " + playerChoice + "\n") + ("Moi : " + computerChoice + "\n") + result )
+       
+        
+       
