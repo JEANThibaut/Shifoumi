@@ -1,78 +1,29 @@
-
-
-//----Welcome message
-
-alert("Bienvenue!");
-
-//----Name request
-
-var person = prompt("Merci d'entrer votre nom");
-console.log("Bienvenue " + person);
-
-//----"Ready to play" message
-
-alert("Bonjour "+ person + ", prêt pour une partie contre moi?");
-
-
-//----Choices
-
-var choices=[
-
+//Déclaration des variables
+var playerName
+var choices= [
     "pierre",
     "feuille",
     "ciseaux"
 ];
+//function
+function askName(){
+
+    var playerName=prompt("Merci d'entrer votre nom:");
+        while (playerName.length<0)
+            var playerName = prompt("Je n'ai pas compris!")
+    return playerName
+}
 
 
-//-----player choice
-
-var playerChoice = prompt("Veuillez choisir entre: \n pierre \n feuille \n ciseaux") 
-console.log(playerChoice)
-
-//----computer choice
-
-var choices =[
-    "pierre",
-    "feuille",
-    "ciseaux"
-];
-
-var i= Math.floor(Math.random()*3);
-console.log(i);
-
-var computerChoice = choices[i];
-console.log("L'ordinateur a choisi " + computerChoice);
+function randomComputerChoice(){
+    var computerChoice = Math.floor(Math.random()*choices.length)
+    return computerChoice
+}
 
 
+//Déroulement
+alert("Bienvenue!")
+askName();
 
-
- //Variables for results
-var result 
-var draw = "Match Nul !"
-var win = "Gagné !"
-var loose = "Perdu!" 
-//------Compare Choices for winner or looser
-
-//Match nul  
-if(playerChoice === computerChoice){
-  
-result= draw;
-console.log(result)
-
-//Gagné
-        }else if ((playerChoice === "ciseaux" && computerChoice === "feuille") || (playerChoice === "pierre" && computerChoice === "feuille")
-        || (playerChoice === "feuille" && computerChoice === "pierre")){
-            result= win
-        console.log(result)
-
-//Perdu
-        }else{
-            result=loose
-            console.log(result)
-
-        }
-    
-        alert( ("Résultats :") + "\n" + ("Vous : " + playerChoice + "\n") + ("Moi : " + computerChoice + "\n") + result )
-       
-        
-       
+alert("Bonjour"+ " "+ playerName +"\nPrêt pour une petite partie?")
+var playerChoice= prompt("Veuillez choisir entre:\npierre,\nfeuille\nciseaux")
